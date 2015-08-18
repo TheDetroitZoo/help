@@ -1,12 +1,12 @@
-.wptv li {
+.dzs-help li {
     display: inline-block;
     list-style: none;
     width: 28%;
     vertical-align: top;
 }
-.wptv img {
+.dzs-help img {
     width: 100%;
 }
-.wptv-link {
+.dzs-help-link {
     float: right;
 }

@@ -1,9 +1,9 @@
 <?php
 
 /*
-Plugin Name: WPTV
+Plugin Name: DZS Help
 Plugin URI: http://realbigplugins.com
-Description: Integrates videos from WordPress.tv with the WordPress admin.
+Description: Provides helpful information and resources within the WordPress dashboard.
 Version: 0.1
 Author: Kyle Maurer
 Author URI: http://kyleblog.net
@@ -11,9 +11,9 @@ License: GPL2
 */
 
 /**
- * Class wptv
+ * Class dzs_help
  */
-class wptv {
+class dzs_help {
 
 	/**
 	 * Array of all the admin screens and the tag for appropriate videos
@@ -51,7 +51,7 @@ class wptv {
 	}
 
 	public function style() {
-		wp_register_style( 'wptv', plugins_url( 'assets/style.css', __FILE__ ), array(), '0.1' );
+		wp_register_style( 'dzs_help', plugins_url( 'assets/style.css', __FILE__ ), array(), '0.1' );
 	}
 
 	/**
@@ -60,7 +60,7 @@ class wptv {
 	 * @return array|mixed|string|null
 	 */
 	public function request( $tag ) {
-		$url     = 'http://wordpress.tv/?wptvapi=videos.json&posts_per_page=3&tag=';
+		$url     = 'http://wordpress.tv/?dzs_helpapi=videos.json&posts_per_page=3&tag=';
 		$request = wp_remote_get( $url . $tag );
 		$request = wp_remote_retrieve_body( $request );
 		if( is_wp_error( $request ) ) {
@@ -77,7 +77,7 @@ class wptv {
 		$screen = get_current_screen();
 		foreach ( $this->places as $place ) {
 			if ( $place['screen'] == $screen->base ) {
-				wp_enqueue_style( 'wptv' );
+				wp_enqueue_style( 'dzs_help' );
 				$screen->add_help_tab( array(
 						'id'       => 'videos',
 						'title'    => 'Videos',
@@ -99,7 +99,7 @@ class wptv {
 				$tag = $place['tag'];
 				$videos = $this->request( $tag );
 				if ( !( $videos === null ) ) {
-					echo '<ul class="wptv">';
+					echo '<ul class="dzs-help">';
 					foreach ( $videos->videos as $video ) {
 						echo '<li>';
 						echo '<a href="' . $video->permalink . '" target="_BLANK">';
@@ -112,9 +112,9 @@ class wptv {
 				}
 			}
 		}
-		echo '<a class="wptv-link" href="http://wordpress.tv/tag/' . $tag . '/">See more videos</a>';
+		echo '<a class="dzs-help-link" href="http://wordpress.tv/tag/' . $tag . '/">See more videos</a>';
 	}
 
 }
 
-$wptv = new wptv();
+$dzs_help = new dzs_help();
