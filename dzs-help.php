@@ -65,7 +65,7 @@ class dzs_help {
 
 					$screen->add_help_tab( array(
 							'id'       => "dzs_$tab",
-							'title'    => ucwords( str_replace( '-', ' ', $tab ) ),
+							'title'    => str_replace( '-', ' ', $tab ),
 							'content'  => '',
 							'callback' => array( $this, 'display' ),
 							'filename'     => $filename,
