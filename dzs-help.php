@@ -4,8 +4,8 @@
 Plugin Name: DZS Help
 Plugin URI: http://realbigplugins.com
 Description: Provides helpful information and resources within the WordPress dashboard.
-Version: 0.1
-Author: Kyle Maurer
+Version: 0.1.1
+Author: Kyle Maurer, updates and snarky counter-comments by Joe Wells
 Author URI: http://kyleblog.net
 License: GPL2
 */
@@ -16,7 +16,7 @@ License: GPL2
 class dzs_help {
 
 	/**
-	 * Initialize all the things
+	 * Initialize all the things ('how nice!' -Joe-)
 	 */
 	public function __construct() {
 
@@ -42,7 +42,7 @@ class dzs_help {
 	}
 
 	/**
-	 * Creates a Videos tab in the help menu for screens included in $places
+	 * Creates a Videos tab in the help menu for screens included in $places ('how interesting! -Joe-)
 	 */
 	public function add_help_tab() {
 
@@ -87,7 +87,7 @@ class dzs_help {
 	}
 
 	/**
-	 * Displays the videos inside the help menu
+	 * Displays the videos inside the help menu ('are these videos available in 4K?' -Joe-)
 	 */
 	public function display( $screen, $args ) {
 
