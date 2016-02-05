@@ -6,7 +6,7 @@ Plugin URI: http://realbigplugins.com
 Description: Provides helpful information and resources within the WordPress dashboard.
 Version: 0.1
 Author: Kyle Maurer
-Author URI: http://kyleblog.net
+Author URI: http://realbigmarketing.com/staff/kyle
 License: GPL2
 */
 
